@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="../index.xhtml">
+        <ui:define name="body">
+            <h1>Cadastro de Produto</h1>
+            <h:form id="form">
+                <!-- Aqui está o growl para exibir mensagens -->
+                <p:growl id="mensagemGrowl" />
+
+                <div class="form-container">
+                    <div class="mb-3">
+                        <p:outputLabel value="Categoria: " />
+                        <p:selectOneMenu id="categoria" value="#{produtoControle.produto.categoria}" converter="#{produtoControle.categoriaConverter}">
+                            <f:selectItems value="#{categoriaControle.listaCategorias}" var="categoria"
+                                           itemLabel="#{categoria.categoria}" itemValue="#{categoria}"/>
+                        </p:selectOneMenu>
+                    </div>                                     
+                    <div class="mb-3">
+                        <p:outputLabel value="Marca: " />
+                        <p:selectOneMenu id="marca" value="#{produtoControle.produto.marca}" converter="#{produtoControle.marcaConverter}">
+                            <f:selectItems value="#{marcaControle.listaMarcas}" var="marca"
+                                           itemLabel="#{marca.marca}" itemValue="#{marca}"/>
+                        </p:selectOneMenu>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <p:outputLabel value="Numeração:" />
+                        <p:inputText id="numeracao" value="#{produtoControle.produto.numeracao}" required="true" requiredMessage="A numeração é obrigatória." />
+                    </div>
+
+                    <div class="mb-3">
+                        <p:outputLabel value="Cor:" />
+                        <p:inputText id="cor" value="#{produtoControle.produto.cor}" required="true" requiredMessage="A cor é obrigatória." />
+                    </div>
+
+                    <div class="mb-3">
+                        <p:outputLabel value="NCM:" />
+                        <p:inputText id="ncm" value="#{produtoControle.produto.ncm}" required="true" requiredMessage="O NCM é obrigatório." />
+                    </div>
+
+                    <div class="mb-3">
+                        <p:outputLabel value="Valor de Venda:" />
+                        <p:inputNumber id="valorVenda" symbol="R$" type="text" 
+                                       value="#{produtoControle.produto.valorUnitarioVenda}" 
+                                       required="true" requiredMessage="O preço de venda é obrigatório." 
+                                       minValue="0" />
+                    </div>
+
+                    <div class="mb-3">
+                        <p:outputLabel value="Quantidade:" />
+                        <p:inputNumber id="quantidade" value="#{produtoControle.produto.estoque}" 
+                                       required="true" requiredMessage="O estoque é obrigatório."
+                                       minValue="0" decimalPlaces="0" />
+                    </div>
+
+
+                    <p:commandButton value="Cadastrar" actionListener="#{produtoControle.salvar()}" 
+                                     update="form mensagemGrowl" ajax="true" />
+                    <p:commandButton value="Cancelar" action="listaProduto.xhtml" immediate="true" ajax="false" />
+                    <p:commandButton value="Cadastrar Categoria" action="categoriaCadastro.xhtml" immediate="true" ajax="false" />
+                    <p:commandButton value="Cadastrar Marca" action="marcaCadastro.xhtml" immediate="true" ajax="false" />
+
+
+                </div>
+            </h:form>
+
+            <style>
+                body {
+                    font-family: 'Poppins', sans-serif;
+                    background-color: #f4f4f4;
+                    color: #333;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                }
+
+                h1 {
+                    text-align: center;
+                    color: #007bff;
+                    margin-bottom: 10px;
+                }
+
+                .form-container {
+                    background: white;
+                    padding: 12px;
+                    border-radius: 10px;
+                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+                    max-width: 490px;
+                    max-height: 590px;
+                    margin: 5px auto;
+                }
+
+                .mb-3 {
+                    margin-bottom: 1.5rem;
+                }
+
+                p:outputLabel {
+                    display: block;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ced4da;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    transition: border-color 0.3s;
+                }
+
+                input:focus {
+                    border-color: #007bff;
+                    box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+                    outline: none;
+                }
+
+                p:commandButton {
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    padding: 12px 20px;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                    width: 100%;
+                    margin-top: 10px;
+                }
+
+                p:commandButton:hover {
+                    background-color: #0056b3;
+                }
+
+                p:commandButton:focus {
+                    outline: none;
+                }
+
+                .form-container input::placeholder {
+                    color: #6c757d;
+                }
+            </style>
+        </ui:define>
+    </ui:composition>
+</html>

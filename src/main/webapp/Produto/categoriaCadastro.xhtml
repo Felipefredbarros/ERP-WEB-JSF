@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="../index.xhtml">
+        <ui:define name="body">
+            <h1>Cadastro de Categoria</h1>
+            <h:form id="form">
+                <p:growl/>
+                <div class="form-container">
+                    <div class="mb-3">
+                        <p:outputLabel value="Categoria: " />
+                        <p:inputText id="categoria" value="#{categoriaControle.categoria.categoria}" required="true" requiredMessage="A Categoria é obrigatória." />
+                    </div>
+                    <p:commandButton value="Cadastrar" actionListener="#{categoriaControle.salvar()}" 
+                                     update="form" ajax="false" />
+                    <p:commandButton value="Cancelar" action="listaProduto.xhtml" immediate="true" ajax="false" />
+                    <p:commandButton value="Cadastrar Produto" action="produtoCadastro.xhtml" immediate="true" ajax="false" />
+                </div>
+
+                <h2>Lista de Categorias Cadastradas</h2>
+                <h:dataTable value="#{categoriaControle.listaCategorias}" var="cat" border="0" styleClass="table-style">
+                    <h:column>
+                        <f:facet name="header">Categoria</f:facet>
+                        <h:outputText value="#{cat.categoria}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Operações</f:facet>
+                        <p:commandButton value="Excluir" 
+                                         actionListener="#{categoriaControle.excluir(cat)}"
+                                         update="form" 
+                                         styleClass="btn-delete" 
+                                         ajax="true" 
+                                         process="@this" />
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+
+            <style>
+                body {
+                    font-family: 'Poppins', sans-serif;
+                    background-color: #f4f4f4;
+                    color: #333;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                }
+
+                h1 {
+                    text-align: center;
+                    color: #007bff;
+                    margin-bottom: 10px;
+                }
+
+                .form-container {
+                    background: white;
+                    padding: 12px;
+                    border-radius: 10px;
+                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+                    max-width: 490px;
+                    max-height: 590px;
+                    margin: 5px auto;
+                }
+
+                .mb-3 {
+                    margin-bottom: 1.5rem;
+                }
+
+                p:outputLabel {
+                    display: block;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ced4da;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    transition: border-color 0.3s;
+                }
+
+                input:focus {
+                    border-color: #007bff;
+                    box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+                    outline: none;
+                }
+
+                p:commandButton {
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    padding: 12px 20px;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                    width: 100%;
+                    margin-top: 10px;
+                }
+
+                p:commandButton:hover {
+                    background-color: #0056b3;
+                }
+
+                p:commandButton:focus {
+                    outline: none;
+                }
+
+                .form-container input::placeholder {
+                    color: #6c757d;
+                }
+            </style>
+        </ui:define>
+    </ui:composition>
+</html>
