@@ -25,9 +25,9 @@
 
 ## RECURSOS DO SISTEMAS:
 ### *CADASTROS:*
--Cliente.
--Funcionario.
--Fornecedor.
+-Cliente. \n
+-Funcionario. \n
+-Fornecedor. \n
 -Marca.
 -Categoria.
 -Produto.
