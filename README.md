@@ -1,6 +1,6 @@
 # ERP-WEB-JSF
 
-### Sistema Web no modelo ERP, com controle de estoque e movimentos para uma loja variejista de roupas, feito para ampliar os conhecimentos em programação.
+### Sistema Web de controle de estoque, com movimentos de compra e venda de mercadoria para uma loja variejista de roupas, feito para ampliar os conhecimentos em programação.
 
 
 
