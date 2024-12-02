@@ -10,7 +10,7 @@
 ### Linguagem: Java 7;
 ### Banco de Dados: PostgresSQL;
 ### Servidor de Aplicação: GlashFishServer;
-### Frameworks e bibliotecas utilizadas: JSF(Java Server Faces) para a construção de interfaces, PrimeFaces para a estelização, JQuery para o dinamismo das paginas, Itext para a geração de relatorios em PDF;
+### Frameworks e bibliotecas utilizadas: JSF(Java Server Faces) para a construção de interfaces, PrimeFaces para a estilização, JQuery para o dinamismo das paginas, Itext para a geração de relatorios em PDF;
 ### Ferramentas: AstahUML para fazer a diagramação do projeto(Caso de Uso, Classes, Sequencia e Deploy).;
 
 
