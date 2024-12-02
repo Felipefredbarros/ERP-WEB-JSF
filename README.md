@@ -54,9 +54,13 @@ Gerenciais: Venda e Compra por periodo
 
 ## MELHORIAS A SEREM REALIZADAS FUTURAMENTE:
 -Melhoria na estrutura de classes do projeto: Fazer uma classe especifica para endereço, para adicionar mais complexidade e informações as pessoas cadastradas).
+
 -Melhoria na interface grafica.
+
 -Desenvolver mais relatorios gerenciais, ex: Produto mais Vendido.
+
 -Desenvolver níveis de acesso para o sistema com uma tela de login(Gerente e Vendedor).
+
 -Desenvolver o Módulo Financeiro do software(Contas a pagar e a receber.
 
 
