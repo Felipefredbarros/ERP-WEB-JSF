@@ -25,20 +25,29 @@
 
 ## RECURSOS DO SISTEMAS:
 ### *CADASTROS:*
--Cliente. 
--Funcionario. 
--Fornecedor. 
--Marca.
--Categoria.
--Produto.
+-Cliente
+
+-Funcionario
+
+-Fornecedor
+
+-Marca
+
+-Categoria
+
+-Produto
+
 
 ### *Movimentos:*
--Venda.
--Compra.
+-Venda
+
+-Compra
+
 
 ### *Relatorios(PDF):*
-Cadastrais: Cliente, funcionario, fornecedor e produto com filtros.
-Gerenciais: Venda e Compra por periodo.
+Cadastrais: Cliente, funcionario, fornecedor e produto com filtros
+
+Gerenciais: Venda e Compra por periodo
 
 
 
