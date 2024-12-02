@@ -17,7 +17,7 @@
 
 
 ## DIAGRAMAS:
-**OBS: O diagrama de caso de uso está com nivel de acesso porque é algo que quero adicionar futuramente**
+**OBS: O diagrama de caso de uso está com nivel de acesso porque é algo que quero adicionar futuramente**.
 ### [Diagramas.pdf](https://github.com/user-attachments/files/17983492/Diagramas.pdf)
 
 
@@ -25,20 +25,20 @@
 
 ## RECURSOS DO SISTEMAS:
 ### *CADASTROS:*
--Cliente
--Funcionario
--Fornecedor
--Marca
--Categoria
--Produto
+-Cliente.
+-Funcionario.
+-Fornecedor.
+-Marca.
+-Categoria.
+-Produto.
 
 ### *Movimentos:*
--Venda
--Compra
+-Venda.
+-Compra.
 
 ### *Relatorios(PDF):*
 Cadastrais: Cliente, funcionario, fornecedor e produto com filtros.
-Gerenciais: Venda e Compra por periodo;
+Gerenciais: Venda e Compra por periodo.
 
 
 
